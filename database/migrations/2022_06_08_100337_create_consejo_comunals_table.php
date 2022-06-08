@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConsejoComunalTable extends Migration
+class CreateConsejoComunalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateConsejoComunalTable extends Migration
      */
     public function up()
     {
-        Schema::create('consejo_comunal', function (Blueprint $table) {
+        Schema::create('consejo_comunals', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->bigInteger('comunidadId')->unsigned();
+            $table->bigInteger('comunidadsId')->unsigned();
             $table->timestamps();
             //relaciones de la migracion
-            $table->foreign('comunidadId')->references('id')->on('comunidad')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('comunidadsId')->references('id')->on('comunidads')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateConsejoComunalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('consejo_comunal');
+        Schema::dropIfExists('consejo_comunals');
     }
 }

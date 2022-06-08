@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCondicionTable extends Migration
+class CreateDepartamentosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateCondicionTable extends Migration
      */
     public function up()
     {
-        Schema::create('condicion', function (Blueprint $table) {
+        Schema::create('departamentos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->bigInteger('empresasId')->unsigned();
             $table->timestamps();
+            //relaciones de las migraciones
+            $table->foreign('empresasId')->references('id')->on('empresas')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -27,6 +30,6 @@ class CreateCondicionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('condicion');
+        Schema::dropIfExists('departamentos');
     }
 }

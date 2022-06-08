@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePeriodoTable extends Migration
+class CreatePeriodosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePeriodoTable extends Migration
      */
     public function up()
     {
-        Schema::create('periodo', function (Blueprint $table) {
+        Schema::create('periodos', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('estudianteId')->unsigned();
+            $table->bigInteger('estudiantesId')->unsigned();
             $table->bigInteger('carreraid')->unsigned();
             $table->timestamps();
             //relaciones de la migracion
-            $table->foreign('estudianteId')->references('id')->on('estudiante')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('carreraId')->references('id')->on('carrera')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('estudiantesId')->references('id')->on('estudiantes')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('carreraId')->references('id')->on('carreras')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ class CreatePeriodoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('periodo');
+        Schema::dropIfExists('periodos');
     }
 }

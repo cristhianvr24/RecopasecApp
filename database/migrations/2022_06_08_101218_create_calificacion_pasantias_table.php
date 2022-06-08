@@ -22,7 +22,7 @@ class CreateCalificacionPasantiasTable extends Migration
             $table->bigInteger('proyecto_pasantiasId')->unsigned();
             $table->timestamps();
             //relaciones de la migracion
-            $table->foreign('periodoId')->references('id')->on('periodo')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('periodoId')->references('id')->on('periodos')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('proyecto_pasantiasId')->references('id')->on('proyecto_pasantias')->onDelete('cascade')->onUpdate('cascade');
         });
     }

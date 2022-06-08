@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProyectoComTable extends Migration
+class CreateProyectoComsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreateProyectoComTable extends Migration
      */
     public function up()
     {
-        Schema::create('proyecto_com', function (Blueprint $table) {
+        Schema::create('proyecto_coms', function (Blueprint $table) {
             $table->id();
             $table->string('codigo')->unique();
             $table->string('titulo');
             $table->date('fechaI');
             $table->date('fechaF');
-            $table->bigInteger('tutor_comunitarioId')->unsigned();
-            $table->bigInteger('tutor_academicoId')->unsigned();
+            $table->bigInteger('tutor_comunitariosId')->unsigned();
+            $table->bigInteger('tutor_academicosId')->unsigned();
             $table->timestamps();
             //relaciones de la migracion
-            $table->foreign('tutor_comunitarioId')->references('id')->on('tutor_comunitario')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('tutor_academicoId')->references('id')->on('tutor_academico')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('tutor_comunitariosId')->references('id')->on('tutor_comunitarios')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('tutor_academicosId')->references('id')->on('tutor_academicos')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -35,6 +35,6 @@ class CreateProyectoComTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proyecto_com');
+        Schema::dropIfExists('proyecto_coms');
     }
 }

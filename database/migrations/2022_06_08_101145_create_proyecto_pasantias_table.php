@@ -23,8 +23,8 @@ class CreateProyectoPasantiasTable extends Migration
             $table->bigInteger('tutor_institucionalId')->unsigned();
             $table->timestamps();
             //relaciones de la migracion
-            $table->foreign('tutor_academicoId')->references('id')->on('tutor_academico')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('tutor_institucionalId')->references('id')->on('tutor_institucional')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('tutor_academicoId')->references('id')->on('tutor_academicos')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('tutor_institucionalId')->references('id')->on('tutor_institucionals')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

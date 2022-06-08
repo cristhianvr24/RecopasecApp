@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateComunidadTable extends Migration
+class CreateParroquiasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateComunidadTable extends Migration
      */
     public function up()
     {
-        Schema::create('comunidad', function (Blueprint $table) {
+        Schema::create('parroquias', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->bigInteger('parroquiId')->unsigned();
+            $table->bigInteger('municipiosId')->unsigned();
             $table->timestamps();
             //relaciones de la migracion
-            $table->foreign('parroquiId')->references('id')->on('parroquia')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('municipiosId')->references('id')->on('municipios')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateComunidadTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comunidad');
+        Schema::dropIfExists('parroquias');
     }
 }
