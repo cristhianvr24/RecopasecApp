@@ -1,8 +1,8 @@
 @extends('layauts.plantilla')
 
-@section('title', 'Datos del estdiante')
+@section('title', 'Datos del estudiante '. $estudiante)
 
 @section('content')
-    <h1><?php echo $estudiante;?> </h1>
+    <h1>{{$estudiante}}</h1>
 @endsection
 
