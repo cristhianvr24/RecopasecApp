@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Estudiante;
 use Illuminate\Http\Request;
 
 class ServicioComController extends Controller
 {
     public function index(){
-        return view('ServicioCom.index');
+        $estudiantes = Estudiante::class;
+        return view('ServicioCom.index', compact('estudiantes'));
     }
     public function create(){
         return view('ServicioCom.create');

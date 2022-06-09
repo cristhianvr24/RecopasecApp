@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 class PasantiaController extends Controller
 {
     public function index(){
-        return "Pasantías";
+        return view('Pasantias.index');
     }
     public function create(){
-        return "Ingrese los datos del estudiante:";
+        return view('Pasantias.create');
     }
     public function show($estudiante){
-        return "$estudiante";
+        return view('Pasantias.show', ['estudiante' => $estudiante]);
     }
 }

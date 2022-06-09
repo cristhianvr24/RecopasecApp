@@ -18,7 +18,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nombre',
+        'apellido',
         'email',
         'password',
     ];
@@ -41,4 +42,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function getNombreAttribute($value){
+        return ucwords($value);
+    }
+    public function setNombreAttribute($value){
+        $this ->attributes['nombre']=strtolower($value);
+    }
+    public function getApellidoAttribute($value){
+        return ucwords($value);
+    }
+    public function setApellidoAttribute($value){
+        $this ->attributes['apellido']=strtolower($value);
+    }
 }
