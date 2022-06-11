@@ -1,4 +1,4 @@
-@extends('layauts.plantilla')
+@extends('layouts.plantilla')
 
 @section('title', 'Ingreso de estudiantes')
 
