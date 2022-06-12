@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class ServicioComController extends Controller
 {
     public function index(){
-        $estudiantes = Estudiante::class;
+
+        $estudiantes = Estudiante::paginate();
         return view('ServicioCom.index', compact('estudiantes'));
     }
     public function create(){

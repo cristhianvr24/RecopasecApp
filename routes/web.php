@@ -27,3 +27,7 @@ Route::get('serviciocom/{estudiante}', [ServicioComController::class, 'show']);
 Route::get('pasantias', [PasantiaController::class, 'index']);
 Route::get('pasantias/create', [PasantiaController::class, 'create']);
 Route::get('pasantias/{estudiante}', [PasantiaController::class, 'show']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
