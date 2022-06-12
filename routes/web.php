@@ -18,15 +18,17 @@ use App\Http\Controllers\ServicioComController;
 //pagina principal
 Route::get('/', HomeController::class);
 //servicio comunitario
-Route::get('serviciocom', [ServicioComController::class, 'index']);
-Route::get('serviciocom/create', [ServicioComController::class, 'create']);
-Route::get('serviciocom/{estudiante}', [ServicioComController::class, 'show']);
+Route::get('serviciocom', [ServicioComController::class, 'index'])->name('serviciocom.index');
+Route::get('serviciocom/create', [ServicioComController::class, 'create'])->name('serviciocom.create');
+Route::post('serviciocom', [ServicioComController::class, 'store'])->name('serviciocom.store');
+Route::get('serviciocom/{id}', [ServicioComController::class, 'show'])->name('serviciocom.show');
 
 //pasantias
 
-Route::get('pasantias', [PasantiaController::class, 'index']);
-Route::get('pasantias/create', [PasantiaController::class, 'create']);
-Route::get('pasantias/{estudiante}', [PasantiaController::class, 'show']);
+Route::get('pasantias', [PasantiaController::class, 'index'])->name('pasantias.index');
+Route::get('pasantias/create', [PasantiaController::class, 'create'])->name('pasantias.create');
+Route::post('pasantias', [PasantiaController::class, 'store'])->name('pasantias.store');
+Route::get('pasantias/{id}', [PasantiaController::class, 'show'])->name('pasantias.show');
 
 Auth::routes();
 

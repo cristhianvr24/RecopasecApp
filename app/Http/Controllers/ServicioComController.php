@@ -14,7 +14,11 @@ class ServicioComController extends Controller
     public function create(){
         return view('ServicioCom.create');
     }
-    public function show($estudiante){
-        return view('ServicioCom.show', ['estudiante' => $estudiante]);
+    public function store(Request $request){
+        return $request->all();
+    }
+    public function show($id){
+        $estudiante = Estudiante::find($id);
+        return view('ServicioCom.show', compact('estudiante'));
     }
 }
