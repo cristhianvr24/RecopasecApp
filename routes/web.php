@@ -23,6 +23,7 @@ Route::get('serviciocom/create', [ServicioComController::class, 'create'])->name
 Route::post('serviciocom', [ServicioComController::class, 'store'])->name('serviciocom.store');
 Route::get('serviciocom/{estudiante}', [ServicioComController::class, 'show'])->name('serviciocom.show');
 Route::get('serviciocom/{estudiante}/edit', [ServicioComController::class, 'edit'])->name('serviciocom.edit');
+Route::put('serviciocom/{estudiante}', [ServicioComController::class, 'update'])->name('serviciocom.update');
 
 //pasantias
 
@@ -31,6 +32,7 @@ Route::get('pasantias/create', [PasantiaController::class, 'create'])->name('pas
 Route::post('pasantias', [PasantiaController::class, 'store'])->name('pasantias.store');
 Route::get('pasantias/{estudiante}', [PasantiaController::class, 'show'])->name('pasantias.show');
 Route::get('pasantias/{estudiante}/edit', [PasantiasController::class, 'edit'])->name('pasantias.edit');
+Route::put('pasantias/{estudiante}', [PasantiasController::class, 'update'])->name('pasantias.update');
 
 Auth::routes();
 
