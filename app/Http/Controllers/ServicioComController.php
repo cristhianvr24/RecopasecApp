@@ -27,8 +27,10 @@ class ServicioComController extends Controller
         $estudiante->save();
         return redirect()->route('serviciocom.show', $estudiante);
     }
-    public function show($id){
-        $estudiante = Estudiante::find($id);
+    public function show(Estudiante $estudiante){
         return view('ServicioCom.show', compact('estudiante'));
+    }
+    public function edit(Estudiante $estudiante){
+        return view('serviciocom.edit', compact('estudiante'));
     }
 }

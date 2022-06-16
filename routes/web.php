@@ -21,14 +21,16 @@ Route::get('/', HomeController::class);
 Route::get('serviciocom', [ServicioComController::class, 'index'])->name('serviciocom.index');
 Route::get('serviciocom/create', [ServicioComController::class, 'create'])->name('serviciocom.create');
 Route::post('serviciocom', [ServicioComController::class, 'store'])->name('serviciocom.store');
-Route::get('serviciocom/{id}', [ServicioComController::class, 'show'])->name('serviciocom.show');
+Route::get('serviciocom/{estudiante}', [ServicioComController::class, 'show'])->name('serviciocom.show');
+Route::get('serviciocom/{estudiante}/edit', [ServicioComController::class, 'edit'])->name('serviciocom.edit');
 
 //pasantias
 
 Route::get('pasantias', [PasantiaController::class, 'index'])->name('pasantias.index');
 Route::get('pasantias/create', [PasantiaController::class, 'create'])->name('pasantias.create');
 Route::post('pasantias', [PasantiaController::class, 'store'])->name('pasantias.store');
-Route::get('pasantias/{id}', [PasantiaController::class, 'show'])->name('pasantias.show');
+Route::get('pasantias/{estudiante}', [PasantiaController::class, 'show'])->name('pasantias.show');
+Route::get('pasantias/{estudiante}/edit', [PasantiasController::class, 'edit'])->name('pasantias.edit');
 
 Auth::routes();
 
