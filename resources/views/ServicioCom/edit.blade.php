@@ -48,9 +48,9 @@
             <br>
             <input type="text" name="email" value="{{$estudiante->email}}">
         </label>
+        <br>
+        <button type="submit">Actualizar formulario del estudiante</button>
     </form>
-    <br>
-    <button type="submit">Actualizar formulario del estudiante</button>
     <br>
     <a href="{{route('serviciocom.index')}}">Volver al inicio</a>
 @endsection

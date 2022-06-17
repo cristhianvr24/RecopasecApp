@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Estudiante;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreServicioCom;
 
 class ServicioComController extends Controller
 {
@@ -14,7 +15,7 @@ class ServicioComController extends Controller
     public function create(){
         return view('ServicioCom.create');
     }
-    public function store(Request $request){
+    public function store(StoreServicioCom $request){
         $estudiante = new Estudiante();
         $estudiante->cedula = $request->cedula;
         $estudiante->nombre_1 = $request->nombre_1;

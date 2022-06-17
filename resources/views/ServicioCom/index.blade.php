@@ -8,7 +8,7 @@
     <ul>
          @foreach ($estudiantes as $estudiante)
             <li>
-                <a href="{{route('serviciocom.show', $estudiante->id)}}">{{$estudiante->name}}</a>
+                <a href="{{route('serviciocom.show', $estudiante->id)}}">{{$estudiante->nombre_1}}</a>
             </li>
         @endforeach 
     </ul>
