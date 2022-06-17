@@ -16,16 +16,8 @@ class ServicioComController extends Controller
         return view('ServicioCom.create');
     }
     public function store(StoreServicioCom $request){
-        $estudiante = new Estudiante();
-        $estudiante->cedula = $request->cedula;
-        $estudiante->nombre_1 = $request->nombre_1;
-        $estudiante->nombre_2 = $request->nombre_2;
-        $estudiante->apellido_1 = $request->apellido_1;
-        $estudiante->apellido_2 = $request->apellido_2;
-        $estudiante->telefono = $request->telefono;
-        $estudiante->email = $request->email;
-
-        $estudiante->save();
+        
+        $estudiante = Estudiante::create($request->all);
         return redirect()->route('serviciocom.show', $estudiante);
     }
     public function show(Estudiante $estudiante){
@@ -35,15 +27,8 @@ class ServicioComController extends Controller
         return view('serviciocom.edit', compact('estudiante'));
     }
     public function update(Request $request, Estudiante $estudiante){
-        $estudiante->cedula = $request->cedula;
-        $estudiante->nombre_1 = $request->nombre_1;
-        $estudiante->nombre_2 = $request->nombre_2;
-        $estudiante->apellido_1 = $request->apellido_1;
-        $estudiante->apellido_2 = $request->apellido_2;
-        $estudiante->telefono = $request->telefono;
-        $estudiante->email = $request->email;
-
-        $estudiante->save();
+        
+        $estudiante->update($request->all());
         return view('serviciocom.show', compact('estudiante'));
     }
 }

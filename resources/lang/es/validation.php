@@ -154,5 +154,4 @@ return [
         'apellido_2' => 'segundo apellido',
         'email' => 'correo',
     ],
-
 ];
