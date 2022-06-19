@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.recopasec.plantillap')
 
 @section('title', 'Ingreso del estudiante')
 

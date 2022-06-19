@@ -9,6 +9,12 @@
     <!-- favicon -->
     <!-- estilos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+      .active{
+        color: red;
+        font-weight: bold;
+      }
+    </style>
 </head>
 <body>
     <!-- header -->
@@ -22,24 +28,23 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Servicio Comunitario</a>
+                <a class="nav-link active" aria-current="page" href="{{route('serviciocom.index')}}" class="{{request()->routeIs('serviciocom.index') ? 'active' : ''}}">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pasantías</a>
+                <a class="nav-link" href="{{route('informacionsc')}}" class="{{request()->routeIs('informacionsc') ? 'active' : ''}}">Información</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                  Carreras
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Ing de Sistemas</a></li>
+                  <li><a class="dropdown-item" href="#">Ing Civil</a></li>
+                  <li><a class="dropdown-item" href="#">Ing Electrica</a></li>
+                  <li><a class="dropdown-item" href="#">Lic en Turismo</a></li>
+                  <li><a class="dropdown-item" href="#">Lic en Adminitración y Gestión Municipal</a></li>
+                  <li><a class="dropdown-item" href="#">Lic en Economía</a></li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
               </li>
             </ul>
             <form class="d-flex" role="search">

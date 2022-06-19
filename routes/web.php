@@ -16,26 +16,15 @@ use App\Http\Controllers\ServicioComController;
 |
 */
 //pagina principal
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 //servicio comunitario
-Route::get('serviciocom', [ServicioComController::class, 'index'])->name('serviciocom.index');
-Route::get('serviciocom/create', [ServicioComController::class, 'create'])->name('serviciocom.create');
-Route::post('serviciocom', [ServicioComController::class, 'store'])->name('serviciocom.store');
-Route::get('serviciocom/{estudiante}', [ServicioComController::class, 'show'])->name('serviciocom.show');
-Route::get('serviciocom/{estudiante}/edit', [ServicioComController::class, 'edit'])->name('serviciocom.edit');
-Route::put('serviciocom/{estudiante}', [ServicioComController::class, 'update'])->name('serviciocom.update');
-Route::delete('serviciocom/{estudiante}', [ServicioComController::class, 'destroy'])->name('serviciocom.destroy');
+Route::resource('serviciocom', ServicioComController::class)->parameters(['serviciocom'=>'estudiante']);
+Route::view('informacionsc', 'ServicioCom.informacion')->name('informacionsc');
 
 //pasantias
-
-Route::get('pasantias', [PasantiaController::class, 'index'])->name('pasantias.index');
-Route::get('pasantias/create', [PasantiaController::class, 'create'])->name('pasantias.create');
-Route::post('pasantias', [PasantiaController::class, 'store'])->name('pasantias.store');
-Route::get('pasantias/{estudiante}', [PasantiaController::class, 'show'])->name('pasantias.show');
-Route::get('pasantias/{estudiante}/edit', [PasantiaController::class, 'edit'])->name('pasantias.edit');
-Route::put('pasantias/{estudiante}', [PasantiaController::class, 'update'])->name('pasantias.update');
-Route::delete('pasantias/{estudiante}', [PasantiaController::class, 'destroy'])->name('pasantias.destroy');
+Route::resource('pasantias', PasantiaController::class)->parameters(['pasantias'=>'estudiante']);
+Route::view('informacionp', 'Pasantias.informacion')->name('informacionp');
 
 //bootstrap
 Auth::routes();

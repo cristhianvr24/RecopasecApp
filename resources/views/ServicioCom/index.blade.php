@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.recopasec.plantillasc')
 
 @section('title', 'Servicio Comunitario')
 

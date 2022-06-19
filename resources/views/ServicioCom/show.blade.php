@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.recopasec.plantillasc')
 
 @section('title', 'Datos del estudiante '. $estudiante->nombre_1)
 
