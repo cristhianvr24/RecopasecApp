@@ -24,7 +24,23 @@ class StorePasantias extends FormRequest
     public function rules()
     {
         return [
-            //
+            'cedula' => 'required|max:09',
+            'nombre_1' => 'required|max:15',
+            'nombre_2' => 'required|max:15',
+            'apellido_1' => 'required|max:15',
+            'apellido_2' => 'required|max:15',
+            'telefono' => 'required|max:12',
+            'email' => 'required|max:100',
+        ];
+    }
+    public function attributes()
+    {
+        return[
+            'cedula' => 'cédula del estudiante',
+            'nombre_1' => 'primer nombre del estudiante',
+            'nombre_2' => 'segundo nombre del estudiante',
+            'apellido_1' => 'primer apellido del estudiante',
+            'apellido_2' => 'segundo apellido del estudiante',
         ];
     }
 }

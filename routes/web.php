@@ -17,6 +17,7 @@ use App\Http\Controllers\ServicioComController;
 */
 //pagina principal
 Route::get('/', HomeController::class);
+
 //servicio comunitario
 Route::get('serviciocom', [ServicioComController::class, 'index'])->name('serviciocom.index');
 Route::get('serviciocom/create', [ServicioComController::class, 'create'])->name('serviciocom.create');
@@ -24,6 +25,7 @@ Route::post('serviciocom', [ServicioComController::class, 'store'])->name('servi
 Route::get('serviciocom/{estudiante}', [ServicioComController::class, 'show'])->name('serviciocom.show');
 Route::get('serviciocom/{estudiante}/edit', [ServicioComController::class, 'edit'])->name('serviciocom.edit');
 Route::put('serviciocom/{estudiante}', [ServicioComController::class, 'update'])->name('serviciocom.update');
+Route::delete('serviciocom/{estudiante}', [ServicioComController::class, 'destroy'])->name('serviciocom.destroy');
 
 //pasantias
 
@@ -31,9 +33,11 @@ Route::get('pasantias', [PasantiaController::class, 'index'])->name('pasantias.i
 Route::get('pasantias/create', [PasantiaController::class, 'create'])->name('pasantias.create');
 Route::post('pasantias', [PasantiaController::class, 'store'])->name('pasantias.store');
 Route::get('pasantias/{estudiante}', [PasantiaController::class, 'show'])->name('pasantias.show');
-Route::get('pasantias/{estudiante}/edit', [PasantiasController::class, 'edit'])->name('pasantias.edit');
-Route::put('pasantias/{estudiante}', [PasantiasController::class, 'update'])->name('pasantias.update');
+Route::get('pasantias/{estudiante}/edit', [PasantiaController::class, 'edit'])->name('pasantias.edit');
+Route::put('pasantias/{estudiante}', [PasantiaController::class, 'update'])->name('pasantias.update');
+Route::delete('pasantias/{estudiante}', [PasantiaController::class, 'destroy'])->name('pasantias.destroy');
 
+//bootstrap
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

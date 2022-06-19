@@ -9,7 +9,15 @@
     <p><strong>Apellidos: </strong>{{$estudiante->apellido_1}} {{$estudiante->apellido_2}}</p>
     <p><strong>Telefono: </strong>{{$estudiante->telefono}}</p>
     <p><strong>Correo: </strong>{{$estudiante->email}}</p>
-    <a href="{{route('serviciocom.index')}}">Volver al inicio</a>
     <br>
     <a href="{{route('serviciocom.edit', $estudiante)}}">Editar estudiante</a>
+    <br>
+    <form action="{{route('serviciocom.destroy', $estudiante)}}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">Eliminar</button>
+    </form>
+    <br>
+    <a href="{{route('serviciocom.index')}}">Volver al inicio</a>
+
 @endsection

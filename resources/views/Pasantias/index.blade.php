@@ -1,15 +1,16 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Pasantías')
+@section('title', 'Pasantìas')
 
 @section('content')
-    <h1>Pasantías</h1>
+    <h1>Pasantìas</h1>
     <a href="{{route('pasantias.create')}}">Añadir un estudiante</a>
     <ul>
          @foreach ($estudiantes as $estudiante)
-            <li>{{$estudiante}}</li>
+            <li>
+                <a href="{{route('pasantias.show', $estudiante->id)}}">{{$estudiante->nombre_1}}</a>
+            </li>
         @endforeach 
     </ul>
     {{$estudiantes->links()}}
 @endsection
-
