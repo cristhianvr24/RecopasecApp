@@ -1,9 +1,9 @@
-@extends('layouts.recopasec.plantillap')
+@extends('layouts.recopasec.plantillasc')
 
-@section('title', 'Ingresar carrera')
+@section('title', 'Ingreso del estudiante')
 
 @section('content')
-    <h1>Ingrese los datos de la carrera:</h1>
+    <h1>Ingrese los datos del estudiante:</h1>
     <form action="{{route('carreras.store')}}" method="POST">
         @csrf
         <label>
@@ -27,11 +27,9 @@
                 <small>*{{$message}}</small>
             <br>            
         @enderror
-        <br>
-        <button type="submit">Registrar estudiante</button>
-    </form>
+        
     
     <br>
-    <a href="{{route('carrera.index')}}">Volver al inicio</a>
+    <a href="{{route('serviciocom.index')}}">Volver al inicio</a>
 @endsection
 
