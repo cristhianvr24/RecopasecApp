@@ -33,7 +33,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('informacionsc')}}" class="{{request()->routeIs('informacionsc') ? 'active' : ''}}">Información</a>
               </li>
-              <li class="nav-item dropdown">
+              {{-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Carreras
                 </a>
@@ -45,7 +45,7 @@
                   <li><a class="dropdown-item" href="#">Lic en Adminitración y Gestión Municipal</a></li>
                   <li><a class="dropdown-item" href="#">Lic en Economía</a></li>
                 </ul>
-              </li>
+              </li> --}}
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

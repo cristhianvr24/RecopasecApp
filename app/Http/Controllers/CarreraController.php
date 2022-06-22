@@ -11,7 +11,7 @@ class CarreraController extends Controller
         return view('Pasantias.index', compact('carreras'));
     }
     public function create(){
-        return view('Pasantias.create');
+        return view('Pasantias.createcarrera');
     }
     public function store(Request $request){
         $request->validate([
@@ -25,10 +25,10 @@ class CarreraController extends Controller
         return redirect()->route('carreras.show', $carrera);
     }
     public function show(Carrera $carrera){
-        return view('Pasantias.show', compact('carrera'));
+        return view('Pasantias.showcarrera', compact('carrera'));
     }
     public function edit(Carrera $carrera){
-        return view('Pasantias.edit', compact('carrera'));
+        return view('Pasantias.editcarrera', compact('carrera'));
     }
     public function update(Request $request, Carrera $carrera){
         $request->validate([
@@ -43,6 +43,6 @@ class CarreraController extends Controller
     } 
     public function destroy(Carrera $carrera){
         $carrera->delete();
-        return redirect()->route('carreras.index');
+        return redirect()->route('pasantias.index');
     }
 }
