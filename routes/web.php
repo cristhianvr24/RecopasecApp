@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\CarreraController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PasantiaController;
 use App\Http\Controllers\ServicioComController;
+use App\Http\Controllers\PasantiaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,9 @@ use App\Http\Controllers\ServicioComController;
 */
 //pagina principal
 Route::get('/', HomeController::class)->name('home');
+
+//Carreras
+Route::resource('carreras', CarreraController::class);
 
 //servicio comunitario
 Route::resource('serviciocom', ServicioComController::class)->parameters(['serviciocom'=>'estudiante']);

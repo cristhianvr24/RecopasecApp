@@ -1,9 +1,9 @@
 @extends('layouts.recopasec.plantillap')
 
-@section('title', 'Pasantías')
+@section('title', 'Registro de estudiantes')
 
 @section('content')
-    <h1>Pasantías</h1>
+    <h1>Registrar Estudiantes</h1>
     <a href="{{route('pasantias.create')}}">Añadir un estudiante</a>
     <ul>
          @foreach ($estudiantes as $estudiante)
