@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 use App\Models\Carrera;
 use Illuminate\Http\Request;
 
-class CarreraController extends Controller
+class CarreraSController extends Controller
 {
     public function index(){
         $carreras = Carrera::orderBy('id')->paginate();
-        return view('Pasantias.index', compact('carreras'));
+        return view('ServicioCom.index', compact('carreras'));
     }
     public function create(){
-        return view('Pasantias.createcarrera');
+        return view('ServicioCom.createcarrera');
     }
     public function store(Request $request){
         $request->validate([
@@ -22,13 +22,13 @@ class CarreraController extends Controller
         $carrera->codigo = $request->codigo;
         $carrera->nombre = $request->nombre;
         $carrera->save();
-        return redirect()->route('carreras.show', $carrera);
+        return redirect()->route('carrerass.show', $carrera);
     }
     public function show(Carrera $carrera){
-        return view('Pasantias.showcarrera', compact('carrera'));
+        return view('ServicioCom.showcarrera', compact('carrera'));
     }
     public function edit(Carrera $carrera){
-        return view('Pasantias.editcarrera', compact('carrera'));
+        return view('ServicioCom.editcarrera', compact('carrera'));
     }
     public function update(Request $request, Carrera $carrera){
         $request->validate([
@@ -39,10 +39,10 @@ class CarreraController extends Controller
         $carrera->codigo = $request->codigo;
         $carrera->nombre = $request->nombre;
         $carrera->save();
-        return redirect()->route('carreras.show', $carrera);
+        return redirect()->route('carrerass.show', $carrera);
     } 
     public function destroy(Carrera $carrera){
         $carrera->delete();
-        return redirect()->route('pasantias.index');
+        return redirect()->route('serviciocom.index');
     }
 }

@@ -1,10 +1,10 @@
 @extends('layouts.recopasec.plantillasc')
 
-@section('title', 'Ingreso del estudiante')
+@section('title', 'Ingresar carrera')
 
 @section('content')
-    <h1>Ingrese los datos del estudiante:</h1>
-    <form action="{{route('carreras.store')}}" method="POST">
+    <h1>Ingrese los datos de la carrera:</h1>
+    <form action="{{route('carrerass.store')}}" method="POST">
         @csrf
         <label>
             Codigo: 

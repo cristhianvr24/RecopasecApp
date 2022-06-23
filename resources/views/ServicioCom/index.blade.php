@@ -13,4 +13,15 @@
         @endforeach 
     </ul>
     {{$estudiantes->links()}}
+    <br>
+    <h1>Carreras</h1>
+    <a href="{{route('carrerass.create')}}">Añadir una carrera</a>
+    <ul>
+         @foreach ($carreras as $carrera)
+            <li>
+                <a href="{{route('carrerass.show', $carrera->id)}}">{{$carrera->nombre}}</a>
+            </li>
+        @endforeach 
+    </ul>
+    {{$carreras->links()}}
 @endsection

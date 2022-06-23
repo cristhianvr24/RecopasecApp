@@ -7,9 +7,9 @@
     <p><strong>Codigo: </strong>{{$carrera->codigo}}</p>
     <p><strong>Nombre: </strong>{{$carrera->nombre}}</p>
     <br>
-    <a href="{{route('carreras.edit', $carrera)}}">Editar carrera</a>
+    <a href="{{route('carrerass.edit', $carrera)}}">Editar carrera</a>
     <br>
-    <form action="{{route('carreras.destroy', $carrera)}}" method="POST">
+    <form action="{{route('carrerass.destroy', $carrera)}}" method="POST">
         @csrf
         @method('delete')
         <button type="submit">Eliminar</button>

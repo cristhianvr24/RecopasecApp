@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Ingrese los datos de la carrera:</h1>
-    <form action="{{route('carreras.store')}}" method="POST">
+    <form action="{{route('carrerasp.store')}}" method="POST">
         @csrf
         <label>
             Codigo: 

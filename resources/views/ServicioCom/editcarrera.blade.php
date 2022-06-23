@@ -1,10 +1,10 @@
 @extends('layouts.recopasec.plantillasc')
 
-@section('title', 'Editar estudiante')
+@section('title', 'Editar carrera')
 
 @section('content')
-    <h1>Editar los datos del estudiante:</h1>
-    <form action="{{route('carrera.update', $estudiante)}}" method="POST">
+    <h1>Editar los datos de la carrera:</h1>
+    <form action="{{route('carrerass.update', $estudiante)}}" method="POST">
         @csrf
         @method('put')
         <label>
