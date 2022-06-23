@@ -27,8 +27,8 @@
                 <small>*{{$message}}</small>
             <br>            
         @enderror
-        
-    
+        <br>
+    <button type="submit">Registrar carrera</button>
     <br>
     <a href="{{route('serviciocom.index')}}">Volver al inicio</a>
 @endsection

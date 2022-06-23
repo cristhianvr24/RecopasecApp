@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Editar los datos de la carrera:</h1>
-    <form action="{{route('carrerass.update', $estudiante)}}" method="POST">
+    <form action="{{route('carrerass.update', $carrera)}}" method="POST">
         @csrf
         @method('put')
         <label>
