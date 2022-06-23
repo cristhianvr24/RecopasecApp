@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServicioComController;
 use App\Http\Controllers\PasantiaController;
+use App\Http\Controllers\ProyectoPController;
+use App\Http\Controllers\ProyectoSController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +26,13 @@ Route::get('/', HomeController::class)->name('home');
 Route::resource('serviciocom', ServicioComController::class)->parameters(['serviciocom'=>'estudiante']);
 Route::view('informacionsc', 'ServicioCom.informacion')->name('informacionsc');
 Route::resource('carrerass', CarreraSController::class)->parameters(['carrerass'=>'carrera']);
+Route::resource('proyectosc', ProyectoSController::class)->parameters(['proyectosc'=>'proyecto']);
 
 //pasantias
 Route::resource('pasantias', PasantiaController::class)->parameters(['pasantias'=>'estudiante']);
 Route::view('informacionp', 'Pasantias.informacion')->name('informacionp');
 Route::resource('carrerasp', CarreraPController::class)->parameters(['carrerasp'=>'carrera']);
+Route::resource('proyectop', ProyectoPController::class)->parameters(['proyectop'=>'proyecto']);
 
 //bootstrap
 Auth::routes();
